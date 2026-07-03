@@ -171,6 +171,10 @@ body{
 }
 .btn-primary:disabled{opacity:.55;cursor:default;box-shadow:none}
 .btn-ghost{background:transparent;color:var(--leaf-dark);border:1.5px solid var(--line2);width:auto;padding:12px 22px}
+.btn-whatsapp{
+  background:#25D366;color:#06210f;box-shadow:0 10px 24px -8px rgba(37,211,102,.5);
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+}
 
 .err{font-size:12.5px;color:#a4291a;margin-top:10px;display:none;background:#fdeceb;border:1px solid #f5c9c4;padding:9px 12px;border-radius:8px;font-weight:600}
 
@@ -198,33 +202,34 @@ body{
 }
 .search:focus{outline:2px solid var(--gold)}
 
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
 .pcard{
-  aspect-ratio:1/1;background:var(--white);border-radius:13px;overflow:hidden;box-shadow:var(--sh-soft);
+  aspect-ratio:1/1;background:var(--white);border-radius:14px;overflow:hidden;box-shadow:var(--sh-soft);
   display:flex;flex-direction:column;transition:transform .15s, box-shadow .15s;
   border:1px solid var(--line);
 }
 .pcard:hover{transform:translateY(-3px);box-shadow:0 16px 32px -12px rgba(16,28,10,.18)}
-.pcard .img{flex:1;min-height:0;position:relative;width:100%;background:#ffffff;display:flex;align-items:center;justify-content:center;color:var(--leaf);font-size:20px;overflow:hidden;padding:10%}
+.pcard .img{flex:1;min-height:0;position:relative;width:100%;background:#ffffff;display:flex;align-items:center;justify-content:center;color:var(--leaf);font-size:26px;overflow:hidden;padding:9%}
 .pcard .img img{max-width:100%;max-height:100%;object-fit:contain}
-.badge-ov{position:absolute;top:6px;left:6px;z-index:2}
 .pcard .footer{
-  flex-shrink:0;display:flex;align-items:flex-end;justify-content:space-between;gap:4px;
-  padding:5px 6px;border-top:1px solid var(--line);
+  flex-shrink:0;display:flex;flex-direction:column;gap:3px;
+  padding:8px 9px;border-top:1px solid var(--line);
 }
+.pcard .footer .toprow{display:flex;align-items:flex-start;justify-content:space-between;gap:6px}
 .pcard .info{min-width:0;flex:1}
-.pcard .name{font-size:10px;font-weight:700;line-height:1.25;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.pcard .price{font-family:var(--mono);font-weight:700;color:var(--leaf-dark);font-size:9.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pcard .name{font-size:12px;font-weight:700;line-height:1.25;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pcard .name2{font-size:10px;color:var(--ink-soft);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.pcard .price{font-family:var(--mono);font-weight:700;color:var(--leaf-dark);font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pcard .price .unit{color:var(--ink-soft);font-weight:500}
-.badge{display:inline-block;font-size:7.5px;font-weight:800;padding:2px 6px;border-radius:20px;width:fit-content;letter-spacing:.3px;text-transform:uppercase;background:#fff;box-shadow:0 1px 4px rgba(16,28,10,.15)}
-.badge-green{color:var(--leaf)}
-.badge-amber{color:var(--gold-dark)}
-.badge-red{color:#a4291a}
+.badge{display:inline-block;font-size:8.5px;font-weight:800;padding:2.5px 7px;border-radius:20px;width:fit-content;letter-spacing:.3px;text-transform:uppercase;margin-bottom:2px}
+.badge-green{background:rgba(63,107,38,.12);color:var(--leaf)}
+.badge-amber{background:rgba(238,162,43,.16);color:var(--gold-dark)}
+.badge-red{background:rgba(200,40,30,.1);color:#a4291a}
 
 .stepper-slot{flex-shrink:0}
 .add-fab{
-  width:24px;height:24px;border-radius:50%;border:none;background:var(--leaf-dark);color:#fff;
-  font-size:15px;line-height:1;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  width:28px;height:28px;border-radius:50%;border:none;background:var(--leaf-dark);color:#fff;
+  font-size:17px;line-height:1;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;
   box-shadow:0 3px 8px rgba(31,61,20,.35);
 }
 .add-fab.oos{background:var(--line2);color:var(--ink-soft);cursor:default;box-shadow:none}
@@ -232,8 +237,8 @@ body{
   display:flex;align-items:center;gap:0;background:var(--leaf-dark);border-radius:20px;overflow:hidden;
   box-shadow:0 3px 8px rgba(31,61,20,.35);
 }
-.mini-stepper button{width:22px;height:24px;border:none;background:transparent;color:#fff;font-size:13px;font-weight:700;cursor:pointer}
-.mini-stepper span{min-width:14px;text-align:center;color:#fff;font-family:var(--mono);font-size:10.5px;font-weight:700}
+.mini-stepper button{width:25px;height:28px;border:none;background:transparent;color:#fff;font-size:14px;font-weight:700;cursor:pointer}
+.mini-stepper span{min-width:16px;text-align:center;color:#fff;font-family:var(--mono);font-size:11.5px;font-weight:700}
 
 /* ---- roomier cards once there's real desktop width to spare ---- */
 @media (min-width:640px){
@@ -241,6 +246,7 @@ body{
   .pcard{border-radius:16px}
   .pcard .footer{padding:9px 10px}
   .pcard .name{font-size:13px}
+  .pcard .name2{font-size:11px}
   .pcard .price{font-size:12px}
   .badge{font-size:9px;padding:3px 8px}
   .add-fab{width:32px;height:32px;font-size:19px}
@@ -377,9 +383,13 @@ textarea:focus{outline:none;border-color:var(--leaf)}
   <div id="success-screen">
     <div class="ico">✓</div>
     <h1>Order submitted!</h1>
-    <p>Thanks — your order has been sent to our team. We'll confirm it with you shortly.</p>
+    <p>We opened WhatsApp with your order details — just hit Send there to notify our team. Didn't open?</p>
     <div class="ref" id="order-ref"></div>
-    <button class="btn btn-primary" style="width:auto;padding:13px 26px" onclick="newOrder()">Place another order</button>
+    <button class="btn btn-whatsapp" onclick="sendOrderToWhatsApp()">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2m0 18.16h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.39c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24m4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.24-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.28"/></svg>
+      Send via WhatsApp
+    </button>
+    <button class="btn btn-ghost" style="margin-top:10px" onclick="newOrder()">Place another order</button>
   </div>
 
 </div>
@@ -404,6 +414,11 @@ textarea:focus{outline:none;border-color:var(--leaf)}
 const firebaseConfig={apiKey:"AIzaSyBAQMDdZHfnygAYBJaA23hP0N2TqCWUA20",authDomain:"fastrack-agrofres.firebaseapp.com",projectId:"fastrack-agrofres",storageBucket:"fastrack-agrofres.firebasestorage.app",messagingSenderId:"860204860828",appId:"1:860204860828:web:e6e8394cf8f3c9c8663459"};
 firebase.initializeApp(firebaseConfig);
 const fsdb=firebase.firestore();
+
+// ⚠️ Set your company's WhatsApp number here — country code + number, no + no spaces, no leading 0.
+// Example: Saudi number 053 891 6564 → "966538916564"
+const COMPANY_WHATSAPP='966538916564';
+let LAST_ORDER=null;
 
 // ===== Install to Home Screen (works alongside the manifest + service worker) =====
 if('serviceWorker' in navigator){
@@ -499,6 +514,38 @@ function formatLocalPhone(phone){
   else if(digits.startsWith('966'))digits='0'+digits.slice(3);
   else if(digits && !digits.startsWith('0'))digits='0'+digits;
   return digits||phone||'';
+}
+
+// Build a clean, receipt-style WhatsApp text message for a submitted order.
+// (A logo/image can't be attached to a wa.me link — WhatsApp only supports
+// prefilled text this way. Your business profile photo on WhatsApp Business
+// shows up automatically on every message instead, which covers branding.)
+function buildWhatsAppMessage(order){
+  const lines=[];
+  lines.push('🧾 *New Order — AgroFresh*');
+  lines.push('');
+  lines.push('📅 '+order.dateStr);
+  lines.push('🏬 '+order.customerName+' ('+order.customerCode+')');
+  if(order.contactLine)lines.push('👤 '+order.contactLine);
+  lines.push('');
+  lines.push('*Items:*');
+  order.items.forEach((it,i)=>{
+    lines.push((i+1)+'. '+it.name+' — '+it.qty+' '+(it.unit||'')+' × SAR '+it.price.toFixed(2)+' = SAR '+it.total.toFixed(2));
+  });
+  lines.push('');
+  lines.push('*Total: SAR '+order.total.toFixed(2)+'*');
+  if(order.notes)lines.push('');
+  if(order.notes)lines.push('📝 Notes: '+order.notes);
+  lines.push('');
+  lines.push('Order Ref: '+order.ref);
+  return lines.join('\n');
+}
+
+function sendOrderToWhatsApp(){
+  if(!LAST_ORDER)return;
+  const msg=buildWhatsAppMessage(LAST_ORDER);
+  const url='https://wa.me/'+COMPANY_WHATSAPP+'?text='+encodeURIComponent(msg);
+  window.open(url,'_blank');
 }
 
 function totalStock(p){
@@ -636,14 +683,17 @@ function renderCatalog(){
     return `<div class="pcard ${oos?'oos':''}">
       <div class="img">
         ${p.image?`<img src="${p.image}">`:'📦'}
-        <div class="badge-ov">${stockBadge(p)}</div>
       </div>
       <div class="footer">
-        <div class="info">
-          <div class="name" title="${p.name}">${p.name}</div>
-          <div class="price">SAR ${(p.price||0).toFixed(2)}<span class="unit">/${p.unit||'unit'}</span></div>
+        ${stockBadge(p)}
+        <div class="toprow">
+          <div class="info">
+            <div class="name" title="${p.name}">${p.name}</div>
+            ${p.name2?`<div class="name2" title="${p.name2}">${p.name2}</div>`:''}
+            <div class="price">SAR ${(p.price||0).toFixed(2)}<span class="unit">/${p.unit||'unit'}</span></div>
+          </div>
+          <div class="stepper-slot" id="stepper-${p.id}">${stepperHTML(p)}</div>
         </div>
-        <div class="stepper-slot" id="stepper-${p.id}">${stepperHTML(p)}</div>
       </div>
     </div>`;
   }).join('');
@@ -697,6 +747,7 @@ async function submitOrder(){
       return {product:pid,name:p.name,unit:p.unit||'',qty,price:p.price||0,total:(p.price||0)*qty};
     });
     const total=items.reduce((s,i)=>s+i.total,0);
+    const notes=document.getElementById('order-notes').value||'';
     const orderRef=await fsdb.collection('webOrders').add({
       customerId:CUSTOMER.id,
       customerCode:CUSTOMER.customerCode,
@@ -704,17 +755,30 @@ async function submitOrder(){
       customerVan:CUSTOMER.van||'',
       items,
       total,
-      notes:document.getElementById('order-notes').value||'',
+      notes,
       status:'pending',
       submittedAt:firebase.firestore.FieldValue.serverTimestamp()
     });
-    document.getElementById('order-ref').textContent='Order Ref: '+orderRef.id.slice(-8).toUpperCase();
+    const refShort=orderRef.id.slice(-8).toUpperCase();
+    const contactParts=[];
+    if(CUSTOMER.contactPerson)contactParts.push(CUSTOMER.contactPerson);
+    if(CUSTOMER.phone)contactParts.push(formatLocalPhone(CUSTOMER.phone));
+    LAST_ORDER={
+      ref:refShort,
+      dateStr:new Date().toLocaleString('en-GB',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}),
+      customerName:CUSTOMER.name,
+      customerCode:CUSTOMER.customerCode,
+      contactLine:contactParts.join(' · '),
+      items,total,notes
+    };
+    document.getElementById('order-ref').textContent='Order Ref: '+refShort;
     closeCart();
     document.getElementById('catalog-screen').style.display='none';
     document.getElementById('app-header').style.display='none';
     document.getElementById('cartbar').style.display='none';
     document.getElementById('success-screen').style.display='flex';
     CART={};
+    try{sendOrderToWhatsApp();}catch(e){console.warn('WhatsApp auto-open blocked, use the button instead.',e);}
   }catch(e){
     console.error(e);
     alert('Could not submit your order. Please check your connection and try again.');
